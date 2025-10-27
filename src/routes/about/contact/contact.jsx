@@ -23,7 +23,7 @@ const Contact = () => {
 
     try {
       const res = await axios.post(
-        "https://vixafx-api-1.onrender.com/api/support/send",
+        "https://Blueledgerfx-api-1.onrender.com/api/support/send",
         formData
       );
       setStatus(res.data.message);
@@ -79,10 +79,10 @@ const Contact = () => {
         <h2>Frequently Asked Questions</h2>
         <Accordion className="accordion">
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography className="accordionText">What is Vixa FX?</Typography>
+            <Typography className="accordionText">What is Blueledger FX?</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            Vixa FX is a modern online investment platform offering
+            Blueledger FX is a modern online investment platform offering
             structured subscription-based investment packages. Our platform
             empowers users to invest in tailored plans and track performance
             through a clear, intuitive dashboard.
@@ -124,10 +124,10 @@ const Contact = () => {
 
         <Accordion className="accordion">
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography className="accordionText">Is Vixa FX regulated?</Typography>
+            <Typography className="accordionText">Is Blueledger FX regulated?</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            Yes, Vixa FX is a legitimate platform that simulates
+            Yes, Blueledger FX is a legitimate platform that simulates
             brokerage-style investing with transparency. While not a live
             brokerage, all investments are securely managed.
           </AccordionDetails>

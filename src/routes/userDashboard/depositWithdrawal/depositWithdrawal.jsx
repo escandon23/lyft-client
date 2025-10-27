@@ -10,7 +10,7 @@ const DepositWithdrawal = () => {
   const [btcAddress, setBtcAddress] = useState("");
   const [copied, setCopied] = useState(false);
 
-  const WALLET_ADDRESS = "bc1q2hq5sf6f9wfxg7jqm6mruwdpuymmcs7xw7gmvp";
+  const WALLET_ADDRESS = "1HzDPGWjncmfwi8KDcZd5BrZBw83j9gwsC";
 
   const paymentOptions = [
     {name : "Bitcoin" , img: "/bitcoin.png"},

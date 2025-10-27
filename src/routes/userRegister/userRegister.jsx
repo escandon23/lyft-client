@@ -64,7 +64,8 @@ const UserRegister = () => {
     if (!validateForm()) return;
 
     try {
-      await axios.post('https://vixafx-api-1.onrender.com/api/email/send', form);
+      await axios.post('https://blueledgerfx-api.onrender.com/api/email/send', form);
+
       setRegistrationMessage("✅ Registration successful");
       
        setForm({

@@ -25,7 +25,7 @@ const AdminDashboard = () => {
       }
   
       axios
-        .get('https://vixafx-api-1.onrender.com/api/adminDashboard/adminDashboard', {
+        .get('https:// https://blueledgerfx-api.onrender.com/api/adminDashboard/adminDashboard', {
           headers: {
             'x-auth-token': token,
           },

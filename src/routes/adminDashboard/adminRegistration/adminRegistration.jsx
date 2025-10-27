@@ -25,7 +25,10 @@
      e.preventDefault();
 
     try {
-        await axios.post('https://vixafx-api-1.onrender.com/api/userRegister/send', formData); 
+       
+     
+        await axios.post('https://blueledgerfx-api.onrender.com/api/userRegister/send', formData); 
+
         setRegisterMessage("✅ Registration successful");
     } catch (err) {
        setRegisterMessage("❌ Registration failed. Please try again.");

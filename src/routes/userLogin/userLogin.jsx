@@ -24,7 +24,7 @@ const UserLogin = () => {
 
     try {
       const res = await axios.post(
-        "https://vixafx-api-1.onrender.com/api/userLogin/send",
+        "https://Blueledgerfx-api-1.onrender.com/api/userLogin/send",
         formData
       );
       console.log("Login response:", res.data);
@@ -86,7 +86,7 @@ const UserLogin = () => {
             <p> Don’t have an account?<Link className="link" to="/userRegister"> Sign up</Link> </p>
           </div>
         </form>
-        <footer>© 2025 Vixa Fx. All Rights Reserved.</footer>
+        <footer>© 2025 Blueledger Fx. All Rights Reserved.</footer>
       </div>
     </div>
   );
