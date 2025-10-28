@@ -25,7 +25,7 @@ const AdminDashboard = () => {
       }
   
       axios
-        .get('https:// https://blueledgerfx-api.onrender.com/api/adminDashboard/adminDashboard', {
+        .get('https://blueledgerfx-api.onrender.com/api/adminDashboard/adminDashboard', {
           headers: {
             'x-auth-token': token,
           },
