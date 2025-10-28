@@ -20,7 +20,7 @@ const AdminTransaction = () => {
           const fetchUsers = async () => {
     
           try {
-            const res = await axios.get("https://vixafx-api-1.onrender.com/api/allUsers/users"); 
+            const res = await axios.get("https://blueledgerfx-api.onrender.com/api/allUsers/users"); 
             setUsers(res.data);
           } catch (err) {
             console.error("Error fetching users:", err);

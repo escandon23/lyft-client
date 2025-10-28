@@ -30,9 +30,13 @@
         } 
 
         .left{
-            flex: 0.5;    
+            flex: 0.7;    
             
             @include responsiveness.medium{
+                display: none;
+            }
+
+            @include responsiveness.small{
                 display: none;
             }
 

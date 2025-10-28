@@ -26,7 +26,7 @@ const Support = () => {
 
     try {
       const res = await axios.post(
-        "https://vixafx-api-1.onrender.com//api/support/send",
+        "https://blueledgerfx-api.onrender.com/api/support/send",
         formData
       );
       setStatus(res.data.message);

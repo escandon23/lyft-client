@@ -24,7 +24,7 @@ const UserLogin = () => {
 
     try {
       const res = await axios.post(
-        "https://Blueledgerfx-api-1.onrender.com/api/userLogin/send",
+        "https://blueledgerfx-api.onrender.com/api/userLogin/send",
         formData
       );
       console.log("Login response:", res.data);
