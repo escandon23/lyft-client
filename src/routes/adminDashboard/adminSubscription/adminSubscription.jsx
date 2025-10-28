@@ -45,7 +45,7 @@ const AdminSubscription = () => {
         e.preventDefault()
         try {
           
-          const res = await axios.post("https://vixafx-api-1.onrender.com/api/subscribe/create", form);
+          const res = await axios.post("https://blueledgerfx-api.onrender.com/api/subscribe/create", form);
              setSubscriptionMessage("✅ Subscription successful");
 
         } catch (err) {

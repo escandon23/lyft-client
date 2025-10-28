@@ -39,7 +39,7 @@ const AdminTransaction = () => {
             e.preventDefault()
 
             try{
-                const res = axios.post("https://vixafx-api-1.onrender.com/api/transactions/transaction", form)
+                const res = axios.post("https://blueledgerfx-api.onrender.com/api/transactions/transaction", form)
                  setTransactionMessage("✅ Transaction successful");
             }catch(err){
                  setTransactionMessage("❌ Transaction failed. Please try again.");
