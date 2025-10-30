@@ -118,7 +118,7 @@
         </select>
         <button type="submit">Register</button>
            <p className={`${registerMessage.includes("✅") ? "success" : "fail"}`}>{registerMessage}</p>
-        <p>© Copyright 2025   Vixa FX   All Rights Reserved.</p>
+        <p>© Copyright 2025   Blueledger FX   All Rights Reserved.</p>
 
       </form>
 

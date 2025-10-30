@@ -111,7 +111,7 @@ const AdminSubscription = () => {
       
               <button type="submit">Subscribe</button>
                 <p className={`${subscriptionMessage.includes("✅") ? "success" : "fail"}`}>{subscriptionMessage}</p>
-                 <p>© Copyright 2025   Vixa FX   All Rights Reserved.</p>
+                 <p>© Copyright 2025   Blueledger FX   All Rights Reserved.</p>
 
              </form>
           </div>

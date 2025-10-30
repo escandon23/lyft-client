@@ -64,7 +64,7 @@ const UserRegister = () => {
     if (!validateForm()) return;
 
     try {
-      await axios.post('https://blueledgerfx-api.onrender.com/api/email/send', form);
+      await axios.post('https://blueledgerfx-api.onrender.com/api/userRegister/send', form);
 
       setRegistrationMessage("✅ Registration successful");
       
@@ -88,7 +88,7 @@ const UserRegister = () => {
       <div className="register-card">
         <Link to="/"><img src='logo.png' className="logo"/></Link>
         <h1>Create an Account</h1>
-        <p className="subtitle">Join Vixa FX and start your investment journey today</p>
+        <p className="subtitle">Join Blueledger FX and start your investment journey today</p>
 
         <form onSubmit={handleSubmit} noValidate>
           <div className='names'>
@@ -152,7 +152,7 @@ const UserRegister = () => {
         <p className="login-text">
           Already have an account? <Link to='/userLogin'>Login</Link>
         </p>
-        <p className="footer">© 2025 Vixa FX. All Rights Reserved.</p>
+        <p className="footer">© 2025 Blueledger FX. All Rights Reserved.</p>
       </div>
     </div>
   );

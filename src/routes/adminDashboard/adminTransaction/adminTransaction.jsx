@@ -83,7 +83,7 @@ const AdminTransaction = () => {
 
             <button type="submit">Set Transaction</button>
      <p className={`${transactionMessage.includes("✅") ? "success" : "fail"}`}>{transactionMessage}</p>
-                                         <p>© Copyright 2025   Vixa FX   All Rights Reserved.</p>
+                                         <p>© Copyright 2025   Blueledger FX   All Rights Reserved.</p>
 
         </form>
 
