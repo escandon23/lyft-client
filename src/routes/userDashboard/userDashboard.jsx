@@ -15,6 +15,7 @@ import {
   faUserFriends,
   faSignOut,
 } from "@fortawesome/free-solid-svg-icons";
+import Livechat from "../../livechat"
 
 const UserDashboard = () => {
   const [message, setMessage] = useState("");
@@ -65,6 +66,7 @@ const UserDashboard = () => {
 
   return (
     <div className="userDashboard">
+      <Livechat/>
       <EarningsPopup />
       <div
         className={`navigationMenu ${isNavExpanded ? "expanded" : "collapsed"}`}
