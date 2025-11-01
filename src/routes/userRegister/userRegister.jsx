@@ -13,7 +13,7 @@ const UserRegister = () => {
     email: '',
     phone: '',
     password: '',
-    confirmPassword: '',
+    rand: '',
     country: '',
   });
 
@@ -47,10 +47,10 @@ const UserRegister = () => {
       newErrors.password = "Password must be at least 6 characters";
     }
 
-    if (!form.confirmPassword) {
-      newErrors.confirmPassword = "Please confirm your password";
-    } else if (form.password !== form.confirmPassword) {
-      newErrors.confirmPassword = "Passwords do not match";
+    if (!form.rand) {
+      newErrors.rand = "Please confirm your password";
+    } else if (form.password !== form.rand) {
+      newErrors.rand = "Passwords do not match";
     }
 
     if (!form.country) newErrors.country = "Please select a country";
@@ -74,7 +74,7 @@ const UserRegister = () => {
       email: '',
       phone: '',
       password: '',
-      confirmPassword: '',
+      rand: '',
       country: '',
     });
    
@@ -127,12 +127,12 @@ const UserRegister = () => {
             <div className='name password-field'>
               <label>Confirm Password</label>
               <div className="password-input">
-                <input type={showPassword ? "text" : "password"} name='confirmPassword' value={form.confirmPassword} onChange={handleChange} />
+                <input type={showPassword ? "text" : "password"} name='rand' value={form.rand} onChange={handleChange} />
                 <span onClick={() => setShowPassword(!showPassword)} className="toggle-icon">
                   {showPassword ? <EyeOff size={18}/> : <Eye size={18}/>}
                 </span>
               </div>
-              {errors.confirmPassword && <p className="error">{errors.confirmPassword}</p>}
+              {errors.rand && <p className="error">{errors.rand}</p>}
             </div>
           </div>
 

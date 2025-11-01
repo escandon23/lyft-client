@@ -13,7 +13,7 @@
     email: '',
     phone: '',
     password: '',
-    confirmPassword: '',
+    rand: '',
     country: '',
     });
 
@@ -94,8 +94,8 @@
             <div className="password-input">
               <input 
               type={showPassword ? "text" : "password"} 
-              name='confirmPassword' value={formData.confirmPassword} 
-              onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
+              name='rand' value={formData.rand} 
+              onChange={(e) => setFormData({ ...formData, rand: e.target.value })}
               />
               <span onClick={() => setShowPassword(!showPassword)} className="toggle-icon">
                 {showPassword ? <EyeOff size={18}/> : <Eye size={18}/>}
