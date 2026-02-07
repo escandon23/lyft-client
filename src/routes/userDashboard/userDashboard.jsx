@@ -1,7 +1,6 @@
 import { useState, React, useEffect } from "react";
 import axios from "axios";
 import "./userDashboard.scss";
-import EarningsPopup from "../../components/earningsPopup/earningsPopup";
 import { Link, Outlet } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -15,7 +14,6 @@ import {
   faUserFriends,
   faSignOut,
 } from "@fortawesome/free-solid-svg-icons";
-import Livechat from "../../livechat"
 
 const UserDashboard = () => {
   const [message, setMessage] = useState("");
@@ -66,8 +64,6 @@ const UserDashboard = () => {
 
   return (
     <div className="userDashboard">
-      <Livechat/>
-      <EarningsPopup />
       <div
         className={`navigationMenu ${isNavExpanded ? "expanded" : "collapsed"}`}
       >

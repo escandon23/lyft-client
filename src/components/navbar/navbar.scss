@@ -222,20 +222,6 @@
         }
 
 
-        
-        .linksBody{
-            position: absolute;
-            width: 100%;
-            top: 70px;
-            left: 0;
-            z-index: 3;  
-
-            @include responsiveness.small{
-                top: 35px;
-            }
-
-        }
-
     }
     .accountButtons{
         display: flex;

@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
+import { HashLink } from 'react-router-hash-link';
 import { Link } from 'react-router-dom'; 
-import Trade from './links/trade/trade';
-import Education from './links/education/education';
-import About from './links/about/about';
 
 import './navbar.scss';
 
@@ -26,8 +24,9 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="logo">
-        <Link to="/"><img src="logo.png" alt="Logo" /></Link>
+        <Link to="/">LYFT FX</Link>
       </div>
+   
       <div className="accountButtonsMobile">
           <Link to="/userRegister" href="/userRegister" className=' button registrationButton'>OPEN AN ACCOUNT</Link>
           <Link to="/userDashboard" className=' button loginButton'>LOGIN</Link>
@@ -48,38 +47,31 @@ const Navbar = () => {
       <div className={` links ${open? "activeMenu" : ""}`}>
         <ul>
           <li>
-            <Link 
-              to="#"
-              onClick={() => toggleSection("trade")}
-              className={`link ${activeLink === "trade" ? "active" : ""}`}
-            >
-              TRADE <img className="arrow" src="right-arrow.png" alt="" />
-            </Link>
+            <HashLink  to="#" className={`link ${activeLink === "trade" ? "active" : ""}`}>Home</HashLink>
           </li>
           <li>
-            <Link
-              to="#"
-              onClick={() => toggleSection("education")}
-              className={`link ${activeLink === "education"   ? "active" : ""}`}
-            >
-              EDUCATION & ANALYTICS <img className="arrow" src="right-arrow.png" alt="" />
-            </Link>
+            <HashLink to="/#Services" className={`link ${activeLink === "education"   ? "active" : ""}`}>
+              Services
+            </HashLink>
           </li>
           <li>
-            <Link
-              to="#"
-              onClick={() => toggleSection("about")}
-              className={`link ${activeLink === "about" ? "active" : ""}`}
-            >
-              ABOUT COMPANY <img className="arrow" src="right-arrow.png" alt="" />
-            </Link>
+            <HashLink to="/#Plans" className={`link ${activeLink === "education"   ? "active" : ""}`}>
+             Plans
+            </HashLink>
           </li>
+          <li>
+            <HashLink to="#"  className={`link ${activeLink === "about" ? "active" : ""}`}>
+              ABOUT COMPANY 
+            </HashLink>
+          </li>
+            <li>
+            <HashLink to="/#Testimonials"  className={`link ${activeLink === "about" ? "active" : ""}`}>
+              Testimonials
+            </HashLink>
+          </li>
+     
         </ul>
-        <div className={`linksBody ${open?"activeLinkBody" : ""}`}>
-          {activeLink === "trade" && <Trade closeMenu={()=> {setActiveLink("")}}/>}
-          {activeLink === "education" && <Education closeMenu={()=> {setActiveLink("")}} />}
-          {activeLink === "about" && <About closeMenu={()=> {setActiveLink("")}} />}
-        </div>
+       
       </div>
         <div className="accountButtons">
           <Link to="/userRegister" className='button registrationButton'>OPEN AN ACCOUNT</Link>

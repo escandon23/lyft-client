@@ -228,60 +228,7 @@
             }
 
         }
-        .second-row{
-            display: flex;
-            align-items: center;
-
-            .left{
-                flex: 0.7;
-                font-size: 20px;
-
-                @include responsiveness.small{
-                    font-size: 8px;
-                    flex: 0.7;
-                }
-                @include responsiveness.medium{
-                    font-size: 16px;
-                    flex: 1;
-                }
-            }
-            .right{
-                flex: 1;
-
-                @include responsiveness.small{
-                    flex: 0.2;
-                }
-
-                @include responsiveness.medium{
-                    flex: 1;
-                }
-
-                img{
-                    width: 5%;
-
-                    @include responsiveness.small{
-                        width: 40%;
-                    }
-                    @include responsiveness.medium{
-                        width: 12%;
-                    }
-                }
-            }
-
-        }
-        .third-row{
-            display: flex;
-            font-size: 20px;
-
-            h3{
-                @include responsiveness.small{
-                    font-size: 8px;
-                }
-                @include responsiveness.medium{
-                    font-size: 16px;
-                }
-            }
-        }
+       
 
       
 

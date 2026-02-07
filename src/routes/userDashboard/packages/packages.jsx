@@ -15,12 +15,7 @@ const Packages = () => {
     balance : 0
   }
 
-  const weeklyPlans = [
-    { name: "Basic", amount: 1000, details: ["Amount: $1,000", "10% Deposit Bonus", "ROI: 50% Daily", "Referral Bonus: 10%", "Duration: 1 Week", "Type: Short Time"] },
-    { name: "Deluxe", amount: 2000, details: ["Amount: $2,000", "15% Deposit Bonus" ,"ROI: 50% Daily", "Referral Bonus: 10%", "Duration: 1 Week", "Type: Short Time"] },
-    { name: "Executive", amount: 5000, details: ["Amount: $5,000", "20% Deposit Bonus","ROI: 50% Daily", "Referral Bonus: 10%", "Duration: 1 Week", "Type: Short Time"] },
-    { name: "Gold", amount: 10000, details: ["Amount: $10,000", "25% Deposit Bonus" , "ROI: 50% Daily", "Referral Bonus: 10%", "Duration: 1 Week", "Type: Short Time"] },
-  ];
+
 
   const monthlyPlans = [
     { name: "Premium", amount: 15000, details: ["Amount: $15,000","30% Deposit Bonus", "Negative Balance Protection", "Spreads: 1.9", "Scalping", "Daily Signals", "Financial Plan"] },
