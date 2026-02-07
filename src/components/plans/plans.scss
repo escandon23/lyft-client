@@ -1,0 +1,110 @@
+@use "../../../styles/responsiveness.scss";
+
+.plans {
+  padding: 50px;
+  background: #f9fafb;
+  color: #1f2937;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+
+  @include responsiveness.small{
+    padding: 50px 20px;
+  }
+
+
+  h1 {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 10px;
+    color: #111827;
+
+    @include responsiveness.small{
+      font-size: 18px;
+    }
+  }
+
+  .subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: #6b7280;
+    margin-bottom: 20px;
+
+    @include responsiveness.small{
+      font-size: 12px;
+    }
+  }
+
+  .plansGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+
+    @include responsiveness.small{
+      flex-direction: column;
+    }
+  }
+
+  .planCard {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 20px 50px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    @include responsiveness.small{
+      padding: 20px;
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    h3 { 
+      color: #16a34a; 
+      margin-bottom: 15px; 
+      font-size: 24px;
+      font-weight: 600;
+
+      @include responsiveness.small{
+        font-size: 20px;
+      }
+    }
+
+    ul { 
+      text-align: center; 
+      margin-bottom: 20px; 
+
+      li { 
+        color: #374151; 
+        font-size: 18px;
+        list-style-type: none;
+        padding: 10px;
+
+        @include responsiveness.small{
+          font-size: 14px;
+        }
+      } 
+    }
+
+    .subscribeBtn {
+      display: inline-block;
+      background: #16a34a;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s ease;
+
+      &:hover { 
+        background: #13af4c; 
+      }
+    }
+  }
+}
