@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import countries from "../../lib/countries";
 import { Eye, EyeOff } from "lucide-react";
 import './userRegister.scss';
 
@@ -11,7 +10,6 @@ const UserRegister = () => {
     firstName: '',
     lastName: '',
     email: '',
-    phone: '',
     password: '',
     rand: '',
     country: '',
@@ -39,7 +37,6 @@ const UserRegister = () => {
       newErrors.email = "Please enter a valid email";
     }
 
-    if (!form.phone.trim()) newErrors.phone = "Phone number is required";
 
     if (!form.password) {
       newErrors.password = "Password is required";
@@ -53,7 +50,6 @@ const UserRegister = () => {
       newErrors.rand = "Passwords do not match";
     }
 
-    if (!form.country) newErrors.country = "Please select a country";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -72,10 +68,8 @@ const UserRegister = () => {
       firstName: '',
       lastName: '',
       email: '',
-      phone: '',
       password: '',
-      rand: '',
-      country: '',
+      rand: ''
     });
    
     } catch (error) {
@@ -108,10 +102,7 @@ const UserRegister = () => {
           <input type='email' name='email' value={form.email} onChange={handleChange} />
           {errors.email && <p className="error">{errors.email}</p>}
 
-          <label>Phone Number</label>
-          <input type='number' placeholder='Enter phone number' value={form.phone} name='phone' onChange={handleChange} />
-          {errors.phone && <p className="error">{errors.phone}</p>}
-
+     
           <div className='names'>
             <div className='name password-field'>
               <label>Password</label>
@@ -135,15 +126,6 @@ const UserRegister = () => {
               {errors.rand && <p className="error">{errors.rand}</p>}
             </div>
           </div>
-
-          <label>Country</label>
-          <select name="country" value={form.country} onChange={handleChange}>
-            <option value="">Choose Country</option>
-            {countries.map((country) => (
-              <option key={country} value={country}>{country}</option>
-            ))}
-          </select>
-          {errors.country && <p className="error">{errors.country}</p>}
 
           <button type='submit'>Register</button>
            <p className={`${registrationMessage.includes("✅") ? "success" : "fail"}`}>{registrationMessage}</p>

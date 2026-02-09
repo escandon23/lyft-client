@@ -7,7 +7,6 @@
     align-items: center;
     justify-content: space-between;
     padding : 10px 20px;
-    position: relative;
 
     @include responsiveness.small{
         padding: 10px 5px;
@@ -125,43 +124,38 @@
     
      
 
-        @include responsiveness.small{
-            display: none;
+       @include responsiveness.small {
+         display: none;
 
-            &.activeMenu{
+            &.activeMenu {
                 display: block;
-                font-size: 10px;
-                position: absolute;
-                width: 100%;
-                top: 58px;
-                height: 50px;
+                position: fixed;
+                top: 70px;
+                right: 0;
                 left: 0;
-                z-index: 2;
+                bottom: 0;
+                overflow: hidden;
+                width: 100vw;
+                height: 100vh;
                 background-color: #1f2025;
-                border-top: 1px solid #01a876;
-                
+                z-index: 100;
+                padding-top: 70px; // space for navbar / cancel icon
 
-                & ul{
-                    display: flex;
-                    justify-content:space-around;
-                    margin-top: 10px;
+                ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 25px;
+                margin-top: 30px;
 
-                    & li{
-
-                        & .link{
-                            display: flex;
-                            gap: 1px;
-                        
-                            
-                            & .arrow{
-                                width: 10px;
-                            }
-                        }
+                li {
+                    .link {
+                    font-size: 18px;
                     }
-
                 }
+                }
+  }
 
-            }
 
 
         }
@@ -197,10 +191,6 @@
 
                     @include responsiveness.medium{
                         font-size: 12px;
-                    }
-
-                    &.active{
-                        color: #01a876;
                     }
 
                     &:hover{

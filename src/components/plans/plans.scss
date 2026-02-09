@@ -6,105 +6,119 @@
   color: #1f2937;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  text-align: center;
+  gap: 50px;
+  height: 100vh;
 
-
-  @include responsiveness.small{
-    padding: 50px 20px;
-  }
-
-
-  h1 {
-    text-align: center;
-    font-size: 26px;
-    margin-bottom: 10px;
-    color: #111827;
 
     @include responsiveness.small{
-      font-size: 18px;
+        gap: 0;
     }
-  }
 
-  .subtitle {
-    text-align: center;
-    font-size: 18px;
-    color: #6b7280;
-    margin-bottom: 20px;
 
-    @include responsiveness.small{
-      font-size: 12px;
+    .header{
+
+        h1{
+            color: black;
+            font-size: 36px;
+
+            @include responsiveness.small{
+                font-size: 24px;
+            }
+        }
+        
     }
-  }
 
-  .plansGrid {
+.plans-wrapper  {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px;
+    align-items: center;
+     justify-content: space-around;
+     padding: 20;
 
-    @include responsiveness.small{
-      flex-direction: column;
-    }
-  }
+    &.lg{
 
-  .planCard {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 16px;
-    padding: 20px 50px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-
-    @include responsiveness.small{
-      padding: 20px;
-    }
-
-    &:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    }
-
-    h3 { 
-      color: #16a34a; 
-      margin-bottom: 15px; 
-      font-size: 24px;
-      font-weight: 600;
-
-      @include responsiveness.small{
-        font-size: 20px;
-      }
-    }
-
-    ul { 
-      text-align: center; 
-      margin-bottom: 20px; 
-
-      li { 
-        color: #374151; 
-        font-size: 18px;
-        list-style-type: none;
-        padding: 10px;
+        display: flex;
 
         @include responsiveness.small{
-          font-size: 14px;
+            display: none;
         }
-      } 
+          @include responsiveness.medium{
+            display: none;
+        }
     }
 
-    .subscribeBtn {
-      display: inline-block;
-      background: #16a34a;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 10px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.3s ease;
+    &.sm{
 
-      &:hover { 
-        background: #13af4c; 
-      }
+        display: none;
+
+        @include responsiveness.small{
+            display: flex;
+        }
+        @include responsiveness.medium{
+            display: flex;}
     }
-  }
+
+
+    @include responsiveness.small {
+        height: 100vh;
+    }
+    @include responsiveness.medium{
+        height: 50vh;
+    }
 }
+
+
+
+   .planCard {
+     background: #ffffff;
+     border: 1px solid #e5e7eb;
+     border-radius: 16px;
+     padding: 20px 50px;
+     text-align: center;
+
+
+     @include responsiveness.small{
+       padding: 20px;
+     }
+
+  
+
+     h3 { 
+       color: #16a34a; 
+       margin-bottom: 15px; 
+       font-size: 24px;
+       font-weight: 600;
+
+       @include responsiveness.small{
+         font-size: 20px;
+       }
+     }
+
+     ul { 
+       text-align: center; 
+       margin-bottom: 20px; 
+
+       li { 
+         color: #374151; 
+         font-size: 18px;
+         list-style-type: none;
+         padding: 10px;
+
+        @include responsiveness.small{
+           font-size: 14px;
+         }
+       } 
+     }
+
+     .subscribeBtn {
+       display: inline-block;
+       background: #16a34a;
+       color: white;
+       padding: 10px 20px;
+       border-radius: 10px;
+       font-weight: 600;
+       text-decoration: none;
+
+     }
+   }
+ }

@@ -2,7 +2,6 @@
  import { useState } from "react";
  import { Eye, EyeOff } from "lucide-react";
  import axios from 'axios';
- import countries from "../../../lib/countries.js";
  import "./adminRegistration.scss"
  
  const AdminRegistration = () => {
@@ -11,10 +10,8 @@
     firstName: '',
     lastName: '',
     email: '',
-    phone: '',
     password: '',
     rand: '',
-    country: '',
     });
 
     const [registerMessage , setRegisterMessage] = useState("")
@@ -69,12 +66,7 @@
               placeholder='name@gmail.com'
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             />
-        <label htmlFor="">Phone Number</label>
-          <input
-              type="number"
-              value={formData.phone}
-              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-            />
+     
          <div className='names'>
             <div className='name'>
               <label>Password</label>
@@ -104,18 +96,7 @@
             </div>
           </div>
       
-         <select
-          name="country"
-          value={formData.country}
-          onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-        >
-          <option value="">Select a country</option>
-          {countries.map((country, idx) => (
-            <option key={idx} value={country}>
-              {country}
-            </option>
-          ))}
-        </select>
+      
         <button type="submit">Register</button>
            <p className={`${registerMessage.includes("✅") ? "success" : "fail"}`}>{registerMessage}</p>
         <p>© Copyright 2025   Blueledger FX   All Rights Reserved.</p>

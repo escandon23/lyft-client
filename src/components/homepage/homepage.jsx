@@ -1,10 +1,10 @@
 import React from 'react'
-import Reason1 from '../reason1/reason1'
 import Plans from '../plans/plans'
 import GlobalMarkets from '../globalMarkets/globalMarkets'
 
 import MainPage from '../mainPage/mainPage'
 import License from "../license/license"
+import Services from '../Service/Services'
 
 import "./homepage.scss"
 import Testimonials from '../Testimonials/Testimonials'
@@ -13,9 +13,15 @@ import Testimonials from '../Testimonials/Testimonials'
 const Homepage = () => {
   return (
     <div className='homepage'>
-       <MainPage/>
-        <Reason1/>
-        <div id='Plans'>
+      <div id="home">
+        <MainPage/>
+
+      </div>
+       <div id='services'>
+              <Services/>
+
+       </div>
+        <div id='plans'>
            <Plans/>
         </div>
        
@@ -24,7 +30,7 @@ const Homepage = () => {
 
         </div>
 
-        <div id="Testimonials">
+        <div id="testimonials">
           <Testimonials/>
         </div>
            <License/>

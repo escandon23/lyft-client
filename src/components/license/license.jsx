@@ -1,96 +1,59 @@
-import React from 'react';
-import { Link }  from "react-router-dom";
-import "./license.scss"
+import React from "react";
+import "./license.scss";
 
 const License = () => {
   return (
-    <div className='license'>
-        <div className='top'>
-            <div className='left'>
-                <h1>LYFT FX</h1>
-            </div>
-            <div className='right'>
-                <h3>REGULATIONS:</h3>
-                <div className='regulations'>
-                    <div className='regulation'>
-                    <img src="license-approved.svg" alt="" />
-                    <p>Licensed by MFSA</p>
-                    </div>
-                    <div className='regulation'>
-                    <img src="license-approved.svg" alt="" />
-                    <p>MIFID Compliant</p>
-                    </div>
-                    <div className='regulation small'>
-                    <img src="license-approved.svg" alt="" />
-                    <p>FCA</p>
-                    </div>
-                    <div className='regulation small'>
-                    <img src="license-approved.svg" alt="" />
-                    <p>BaFin</p>
-                    </div>
-                    <div className='regulation small'>
-                    <img src="license-approved.svg" alt="" />
-                    <p>AMF</p>
-                    </div>
-                    <div className='regulation small'>
-                    <img src="license-approved.svg" alt="" />
-                    <p>CONSOB</p>
-                    </div>
-                </div>
-               
-            </div>
-
+    <footer className="license">
+      {/* TOP */}
+      <div className="license-top">
+        <div className="brand">
+          <h2>LYFT FX</h2>
+          <span className="tagline">Global Forex & CFD Trading Platform</span>
         </div>
-        <div className='middle'>
-            <div className="first-row">
-                <div className='left'>
-                    <h3>LIQUIDITY PROVIDERS:</h3>
-                </div>
-                <div className='right'>
-                    <div className="liquidityProvider">
-                        <img src="dukascopy.svg" alt="" />
-                    </div>
-                    <div className="liquidityProvider">
-                        <img src="primexm.svg" alt="" />
-                    </div>
-                    <div className="liquidityProvider">
-                        <img src="barclays.svg" alt="" />
-                    </div>
-                    <div className="liquidityProvider">
-                        <img src="ubs.svg" alt="" />
-                    </div>
-                    <div className="liquidityProvider">
-                        <img src="currenex.svg" alt="" />
-                    </div>
-                    <div className="liquidityProvider">
-                        <img src="citi.svg" alt="" />
-                    </div>
-                    <div className="liquidityProvider">
-                        <img src="creditsuisse.svg" alt="" />
-                    </div>
-                 </div>
-             </div>
-         
-        
-        </div>
-        <div className='bottom'>
-            <p>Trader Base FX Company Platform. is regulated by the US Financial Services Authority (License Number IS/560000).</p>
-            <p>RISK WARNING: Trading in Forex and Contracts for Difference (CFDs), which are leveraged products, is highly speculative and involves substantial risk of loss.
-                It is possible to lose all your capital. Your capital is not guaranteed and may go down as well as up. Therefore, Forex and CFDs may not be suitable for all investors.
-                Only invest with money you can afford to lose.
-                So please ensure that you fully understand the risks involved. Seek independent advice if necessary.</p>
-            <p>CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. 
-                Over the past 12 months 54.6% of Trader Base FX Company Platform retail investor accounts lose money when trading CFDs with Trader Base FX Company Platform. 
-                You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money.</p>
 
-            <p>Trader Base FX Company Platform. provides its services to all global citizens. 
-                Copyright © 2015 - 2022 Trader Base FX Company Platform.. All Rights Reserved.
-            <span className="terms-conditions"> Terms and Conditions</span>|<span className='risk-disclosure'>Risk Disclosure</span>   * Prices displayed on the website may be affected by changes in currency exchange rate and price movements thereby affecting your investment return therefrom. Trader Base FX Company Platform is incorporated in US, 31 Beeston Road, Nottingham | Company Registration Number: IS/560000 MFSA License Number: IS/560000.
-                        </p>
+        <div className="regulation">
+          <span className="label">Regulated by</span>
+          <div className="reg-badge">
+            <img src="license-approved.svg" alt="MFSA" />
+            <p>MFSA · License No: IS/560000</p>
+          </div>
         </div>
-      
-    </div>
-  )
-}
+      </div>
 
-export default License
+      {/* MIDDLE */}
+      <div className="license-middle">
+        <span className="label">Liquidity Providers</span>
+        <div className="liquidity">
+          <img src="dukascopy.svg" alt="Dukascopy" />
+          <img src="barclays.svg" alt="Barclays" />
+          <img src="ubs.svg" alt="UBS" />
+          <img src="citi.svg" alt="Citi" />
+        </div>
+      </div>
+
+      {/* BOTTOM */}
+      <div className="license-bottom">
+        <p className="risk-title">Risk Warning</p>
+
+        <p>
+          Trading Forex and CFDs involves significant risk and may not be
+          suitable for all investors. You may lose all of your invested capital.
+          Please ensure you fully understand the risks involved.
+        </p>
+
+
+        <div className="footer-links">
+          <span>Terms & Conditions</span>
+          <span>Risk Disclosure</span>
+          <span>Privacy Policy</span>
+        </div>
+
+        <p className="copyright">
+          © 2015–2026 LYFT FX. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  );
+};
+
+export default License;

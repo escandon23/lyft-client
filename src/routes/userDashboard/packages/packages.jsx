@@ -20,7 +20,6 @@ const Packages = () => {
   const monthlyPlans = [
     { name: "Premium", amount: 15000, details: ["Amount: $15,000","30% Deposit Bonus", "Negative Balance Protection", "Spreads: 1.9", "Scalping", "Daily Signals", "Financial Plan"] },
     { name: "VIP", amount: 20000, details: ["Amount: $20,000","35% Deposit Bonus", "Negative Balance Protection", "Spreads: 1.5", "Scalping", "Daily Signals", "Financial Plan"] },
-    { name: "VIP Luxury", amount: 25000, details: ["Amount: $25,000","40% Deposit Bonus", "Negative Balance Protection", "Spreads: 1.2", "Scalping", "Daily Signals", "Financial Plan"] },
     { name: "Platinum",amount: 30000, details: ["Amount: $30,000","50% Deposit Bonus", "Negative Balance Protection", "Spreads: 1.2", "Scalping", "Daily Signals", "Financial Plan"] },
   ];
 

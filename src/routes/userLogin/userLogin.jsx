@@ -42,7 +42,7 @@ const UserLogin = () => {
     <div className="userLogin">
       <div className="login-card">
         <div className="logo">
-          <Link to="/"><img src="logo.png" alt="Trader Base FX" /></Link>
+          <Link to="/">LYFT FX </Link>
         </div>
 
         <h1 className="title">Welcome Back</h1>

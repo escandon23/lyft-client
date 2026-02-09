@@ -1,75 +1,75 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import { HashLink } from 'react-router-hash-link';
 import { Link } from 'react-router-dom'; 
 
 import './navbar.scss';
 
 const Navbar = () => {
-  const [activeLink, setActiveLink] = useState("");
-  const [open , setOpen] = useState(false)
+  const [menu , setMenu] = useState(false)
+
+  useEffect(() => {
+    if (menu) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    // Cleanup in case component unmounts
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [menu]);
 
 
-  const toggleSection = (section) => {
-    setActiveLink(prev => (prev === section ? "" : section));
-  };
-
-  const handleMenu = () => {
-    setOpen(true)
+  const toggleMenu = () => {
+    setMenu(!menu)
   }
-  const handleCancel = () => {
-    setOpen(false)
-  }
+
+
 
 
   return (
     <div className="navbar">
       <div className="logo">
-        <Link to="/">LYFT FX</Link>
+        <HashLink to="/#home">LYFT FX</HashLink>
       </div>
    
       <div className="accountButtonsMobile">
-          <Link to="/userRegister" href="/userRegister" className=' button registrationButton'>OPEN AN ACCOUNT</Link>
+          <Link to="/userRegister" href="/userRegister" className='button registrationButton'>OPEN AN ACCOUNT</Link>
           <Link to="/userDashboard" className=' button loginButton'>LOGIN</Link>
-        </div>
+      </div>
       <div className="navIcons">
  
-        <div onClick={handleMenu} className={`menuIcon ${open ? "hide" : ""}`}>
+        <div onClick={toggleMenu} className={`menuIcon ${menu ? "hide" : ""}`}>
           <Link to="#"><img src="menu.png" alt="" /></Link>
         </div>
-        <div onClick={handleCancel} className={`cancelIcon ${open?"" : "hide"}`}>
+        <div onClick={toggleMenu} className={`cancelIcon ${menu?"" : "hide"}`}>
           <Link to="#"><img src="cancel.png" alt="" /></Link>
-  
         </div>
 
       </div>
-    
 
-      <div className={` links ${open? "activeMenu" : ""}`}>
+
+      <div className={` links ${menu? "activeMenu" : ""}`}>
         <ul>
           <li>
-            <HashLink  to="#" className={`link ${activeLink === "trade" ? "active" : ""}`}>Home</HashLink>
+            <HashLink  to="/#home" onClick={() => setMenu(false)} className="link">Home</HashLink>
           </li>
           <li>
-            <HashLink to="/#Services" className={`link ${activeLink === "education"   ? "active" : ""}`}>
+            <HashLink to="/#services"onClick={() => setMenu(false)} className="link">
               Services
             </HashLink>
           </li>
           <li>
-            <HashLink to="/#Plans" className={`link ${activeLink === "education"   ? "active" : ""}`}>
+            <HashLink to="/#plans" onClick={() => setMenu(false)} className="link">
              Plans
             </HashLink>
           </li>
-          <li>
-            <HashLink to="#"  className={`link ${activeLink === "about" ? "active" : ""}`}>
-              ABOUT COMPANY 
-            </HashLink>
-          </li>
             <li>
-            <HashLink to="/#Testimonials"  className={`link ${activeLink === "about" ? "active" : ""}`}>
+            <HashLink to="/#testimonials" onClick={() => setMenu(false)} className="link">
               Testimonials
             </HashLink>
-          </li>
-     
+          </li>     
         </ul>
        
       </div>

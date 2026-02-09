@@ -25,16 +25,6 @@ const Account = () => {
             <span className="label">Email Address:</span>
             <span className="value">{message.email}</span>
           </div>
-
-          <div className="info-item">
-            <span className="label">Country:</span>
-            <span className="value">{message.country}</span>
-          </div>
-
-          <div className="info-item">
-            <span className="label">Phone Number:</span>
-            <span className="value">{message.phone}</span>
-          </div>
         </div>
       </div>
     </div>
