@@ -80,7 +80,7 @@ const UserRegister = () => {
   return (
     <div className='userRegister'>
       <div className="register-card">
-        <Link to="/"><img src='logo.png' className="logo"/></Link>
+        <h2 className='logo'><Link to="/">LOGO FX</Link></h2> 
         <h1>Create an Account</h1>
         <p className="subtitle">Join Blueledger FX and start your investment journey today</p>
 

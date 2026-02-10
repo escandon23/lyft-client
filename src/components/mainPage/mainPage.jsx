@@ -24,7 +24,7 @@ const MainPage = () => {
                 speed={3000}
             >
             <SwiperSlide>
-                <div className=" slide slide1">
+                <div className="slide slide1">
                     <div className="slideText">
                         <h1>Regulated Mining Platform | Forex Broker Options</h1>
                         <h3>BY THE MFSA OVER 7 YEARS</h3>

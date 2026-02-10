@@ -1,31 +1,39 @@
 @use "../../../styles/responsiveness.scss";
 
 .navbar{
-    background-color: #1f2025;
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
     padding : 10px 20px;
+    position : absolute;
+    top: 0px;
+    z-index: 999;
+    color: white;
 
     @include responsiveness.small{
         padding: 10px 5px;
+        justify-content: space-around;  
     }
 
     @include responsiveness.medium{
         padding : 10px;
     }
 
+    &.scrolled {
+        background-color: black;
+        position: fixed;
+        top: 0;
+    }
+
     .logo{
-        img{
-            width:200px;
-            height: 50px;
+        letter-spacing: 7px;
 
         @include responsiveness.small{
-            height: 50px;
-            width: 100px;
-      }
+            letter-spacing: 0px;
         }
+
     }
     .accountButtonsMobile{
         display: none;
@@ -73,7 +81,6 @@
 }
     .navIcons{
 
-
         .menuIcon{
             display: none;
     
@@ -118,34 +125,30 @@
 
 
         @include responsiveness.medium{
-            width: 50%;
+            width: 35%;
         }
-
-    
-     
 
        @include responsiveness.small {
          display: none;
 
-            &.activeMenu {
+            &.linksVertical {
                 display: block;
                 position: fixed;
-                top: 70px;
+                top: 65px;
                 right: 0;
                 left: 0;
                 bottom: 0;
                 overflow: hidden;
                 width: 100vw;
-                height: 100vh;
-                background-color: #1f2025;
+                background-color: black;
                 z-index: 100;
-                padding-top: 70px; // space for navbar / cancel icon
+                padding-top: 70px; 
 
                 ul {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                gap: 25px;
+                gap: 50px;
                 margin-top: 30px;
 
                 li {
@@ -153,12 +156,16 @@
                     font-size: 18px;
                     }
                 }
-                }
+            }
   }
 
 
 
         }
+
+        
+
+        
         
         ul{
             display: flex;
@@ -215,7 +222,7 @@
     }
     .accountButtons{
         display: flex;
-        justify-content: space-around;
+        gap: 10px;
         width: 300px;
 
         @include responsiveness.small{
@@ -254,15 +261,8 @@
                     &:hover{
                         background-color: #02c087;
                     }
-                }   
-
-
+                }  
         }
-
-
-   
-
- 
 
     }
      

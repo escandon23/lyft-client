@@ -1,13 +1,12 @@
-import React from 'react'
+import MainPage from '../mainPage/mainPage'
+import Navbar from '../navbar/navbar'
+import Services from '../Service/Services'
 import Plans from '../plans/plans'
 import GlobalMarkets from '../globalMarkets/globalMarkets'
-
-import MainPage from '../mainPage/mainPage'
+import Testimonials from '../Testimonials/Testimonials'
 import License from "../license/license"
-import Services from '../Service/Services'
 
 import "./homepage.scss"
-import Testimonials from '../Testimonials/Testimonials'
 
 
 const Homepage = () => {
@@ -15,28 +14,21 @@ const Homepage = () => {
     <div className='homepage'>
       <div id="home">
         <MainPage/>
-
       </div>
-       <div id='services'>
-              <Services/>
-
-       </div>
-        <div id='plans'>
-           <Plans/>
-        </div>
-       
-        <div >
-                <GlobalMarkets/>
-
-        </div>
-
-        <div id="testimonials">
-          <Testimonials/>
-        </div>
-           <License/>
-
-    
-      
+      <Navbar/>  
+      <div id='services'>
+        <Services/>
+      </div>
+      <div id='plans'>
+        <Plans/>
+      </div>  
+      <div >
+        <GlobalMarkets/>
+      </div>
+      <div id="testimonials">
+        <Testimonials/>
+      </div>
+      <License/>      
     </div>
   )
 }

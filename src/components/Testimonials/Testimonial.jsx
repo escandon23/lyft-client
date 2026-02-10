@@ -6,7 +6,7 @@ import "./Testimonials.scss";
 
 const Testimonial = ({ name, image, comment , designation }) => {
   return (
-    <Card sx={{ minWidth : 300, maxWidth : 400 ,  height:350 , margin : "0 auto" ,  position: "relative", textAlign: "center", paddingTop : 20}}>
+    <Card sx={{ minWidth : 300, maxWidth : 400 ,  height:350 , margin : "0 auto" ,  position: "relative", textAlign: "center", paddingTop : 20 }}>
         <div className="avatar-wrapper">
           <img src={image} alt={name} className="avatar" />
          </div>

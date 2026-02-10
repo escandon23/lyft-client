@@ -30,17 +30,10 @@ const ServicesData = [
 
 
 
-
-
-
-
-
-
 const Services = () => {
     return (
-         <div className="services">
-      <h1>Our Services</h1>
-
+      <div className="services">
+        <h1>Our Services</h1>
       <div className="service-wrapper">
         {ServicesData.map((data, index) => (
           <Service

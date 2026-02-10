@@ -31,7 +31,6 @@ const PlansData = [
       "Welcome Bonus: 30%",
       "Leverage: Up to 1:300",
       "Spreads: From 1.5 pips",
-      "Negative Balance Protection",
       "Scalping & Hedging Allowed",
       "Daily Trading Signals",
       "Priority Support"
@@ -45,8 +44,6 @@ const PlansData = [
       "Welcome Bonus: 50%",
       "Leverage: Up to 1:500",
       "Spreads: From 1.2 pips",
-      "Negative Balance Protection",
-      "Scalping & Expert Advisors (EA)",
       "Daily Trading Signals",
       "Personal Account Manager",
       "24/7 Priority Support"
@@ -117,29 +114,3 @@ export default Plans;
 
 
         
-           
-    // )
-
-    //  <div className="plans">
-    //         <div className="header">
-    //             <h1>Secure a spot with us</h1>
-
-    //         </div>
-    //         <div className="plan sm"></div>
-    
-    //     {PlansData.map((plan, index) => (
-    //         <Plan  name={plan.name} amount={plan.amount} details={plan.details} />
-
-    //       ))}
-
-         
-          
-    //      </div>        
-          
-    //       {/* <div className="plan lg">
-    //         {PlansData.map((plan, index) => (
-    //            <Plan key={index} name={plan.name} amount={plan.amount} details={plan.details} />
-    //       ))}
-
-
-    //     </div>     */}

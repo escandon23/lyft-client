@@ -9,34 +9,61 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 100px;
     padding: 20px;
-    gap: 20px;
 
     h1{
         color: black;
     }
 
+    @include responsiveness.small{
+        height: 100%;
+        gap: 50px;
+        padding: 20px;
+    }
+
 
     .service-wrapper{
-        display: flex;
-        justify-content: space-around;
-        gap: 20px;
-        width: 100vw;
+        display: grid;
+        gap: 30px;
+       grid-template-columns: 1fr 1fr 1fr 1fr;
 
 
+       @include responsiveness.small{
+        display: grid;
+        grid-template-columns: 1fr;
+       }
 
-        @include responsiveness.small{
-            flex-direction: column;
+
+        @include responsiveness.medium{
+             display: grid;
+             grid-template-columns: 1fr 1fr;
         }
     }
 
     .serviceCard{
         display: flex;
         flex-direction: column;
-        gap : 10px;
+        gap : 20px;
         align-items: center;
         text-align: center;
-        max-width: 350px;
+        line-height: 1.6;
+
+
+        h3{
+            color: black;
+    
+        }
+        p{
+            font-size: 16px;
+
+            @include responsiveness.small{
+            font-size: 14px;
+            line-height: 1.6;
+            }
+
+        }
+     
 
         img{
             height: 50px;
