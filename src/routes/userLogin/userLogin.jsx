@@ -11,6 +11,9 @@ const UserLogin = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
+    const thisYear = new Date().getFullYear()
+
+
   const togglePasswordVisibility = () => {
     setPasswordVisible((prev) => !prev);
   };
@@ -24,7 +27,7 @@ const UserLogin = () => {
 
     try {
       const res = await axios.post(
-        "https://blueledgerfx-api.onrender.com/api/userLogin/send",
+          "http://localhost:5000/api/userLogin/send",
         formData
       );
       console.log("Login response:", res.data);
@@ -41,9 +44,9 @@ const UserLogin = () => {
   return (
     <div className="userLogin">
       <div className="login-card">
-        <div className="logo">
-          <Link to="/">LYFT FX </Link>
-        </div>
+          <div className='exit'>
+                  <Link to="/"><img src="icons/exit.png" alt="" /></Link>
+                </div>
 
         <h1 className="title">Welcome Back</h1>
         <p className="subtitle">Log in to access your dashboard</p>
@@ -66,7 +69,7 @@ const UserLogin = () => {
               <input
                 name="password"
                 type={passwordVisible ? "text" : "password"}
-                placeholder="enter Password"
+                placeholder="enter password"
                 value={formData.password}
                 onChange={handleChange}
               />
@@ -76,9 +79,15 @@ const UserLogin = () => {
             </div>
           </div>
 
-          <button type="submit" className="loginBtn">
+          <button type="submit">
             Login
           </button>
+           <div class="divider">
+            <span>or</span>
+          </div>
+
+          <button><img src="icons/google.png" alt="" />Login with Google</button>
+          <button><img src="icons/apple.png" alt="" />Login with Apple</button>
           {error && <p className="error">{error}</p>}
 
           <div className="extraLinks">
@@ -86,7 +95,7 @@ const UserLogin = () => {
             <p> Don’t have an account?<Link className="link" to="/userRegister"> Sign up</Link> </p>
           </div>
         </form>
-        <footer>© 2025 Blueledger Fx. All Rights Reserved.</footer>
+        <footer>© {thisYear} Lyft Fx. All Rights Reserved.</footer>
       </div>
     </div>
   );

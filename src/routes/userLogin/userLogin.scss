@@ -2,7 +2,6 @@
 
 
 .userLogin {
-  background:  #2e214a;
   color: #333;
   height: 100vh;
   display: flex;
@@ -11,6 +10,7 @@
 
 
   .login-card {
+    position: relative;
     background: #fff;
     padding: 20px;
     border-radius: 16px;
@@ -19,21 +19,25 @@
     text-align: center;
 
     @include responsiveness.small{
-        padding: 20px;
         width: 80%;
     }
     @include responsiveness.medium{
         width: 50%;
     }
 
-    .logo img {
-      width:200px;
-      height: 50px;
-      margin-bottom: 20px;
+    .exit{
+      position: absolute;
+      top : 20px;
+      left: 20px;
+
+      img{
+        height:30px;
+        width: 30px;
 
         @include responsiveness.small{
-        height: 50px;
-        width: 150px;
+          height: 20px;
+          width: 20px;
+        }
       }
     }
 
@@ -60,25 +64,25 @@
     form {
       display: flex;
       flex-direction: column;
-      gap: 30px;
+      gap: 10px;
 
-      @include responsiveness.small{
-        gap: 15px;
-      }
+ 
 
       .inputGroup {
-        text-align: left;
+        display: flex;
+        flex-direction: column;
+        text-align: left ;
+        gap: 10px;
     
 
         label {
-          font-size: 18px;
+          font-size: 15px;
           font-weight: 500;
-          margin-bottom: 20px;
-          display: block;
+          color: #231839;
 
           @include responsiveness.small{
             font-size: 12px;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
           }
         }
 
@@ -97,8 +101,7 @@
           }
 
           &:focus {
-            border-color: #4081b8;
-            box-shadow: 0 0 6px rgba(64, 129, 184, 0.4);
+            box-shadow: 0 0 3px black;
             outline: none;
           }
         }
@@ -132,24 +135,50 @@
         }
       }
 
-      .loginBtn {
-        background: #4081b8;
-        color: #fff;
-        padding: 14px ;
-        font-size: 16px;
-        border-radius: 8px;
-        border: none;
-        cursor: pointer;
-        transition: background 0.3s;
-        width: 100%;
+      .divider {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #888;
+        font-size: 13px;
 
-        @include responsiveness.small{
-            font-size: 14px;
-            padding: 10px;
+        span {
+          padding: 0 12px;
+          font-weight: 500;
+          font-size: 16px;
         }
+      }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #ddd;
+    }
+
+      button {
+        background-color: #fff;
+        border: 1px solid black;
+        color: black;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
 
         &:hover {
-          background: #30618a;
+          background: black;
+          color: white;       
+        }
+
+        img{
+          height: 30px;
+          width: 30px;
         }
       }
 

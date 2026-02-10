@@ -2,7 +2,6 @@
 
 
 .adminLogin {
-  background:  #2e214a;
   color: #333;
   height: 100vh;
   display: flex;
@@ -11,12 +10,13 @@
 
 
   .login-card {
-    background: #fff;
+     background: #fff;
     padding: 20px;
     border-radius: 16px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
     width: 30%;
     text-align: center;
+    position: relative;
 
     @include responsiveness.small{
         padding: 20px;
@@ -26,17 +26,21 @@
         width: 50%;
     }
 
-    .logo img {
-      width:150px;
-      height: 45px;
-      margin-bottom: 20px;
+        .exit{
+      position: absolute;
+      top : 20px;
+      left: 20px;
+
+      img{
+        height:30px;
+        width: 30px;
 
         @include responsiveness.small{
-        height: 35px;
-        width: 100px;
+          height: 20px;
+          width: 20px;
+        }
       }
     }
-
     .title {
       font-size: 26px;
       font-weight: 600;
@@ -46,7 +50,6 @@
         font-size: 18px;
       }
     }
-
     .subtitle {
       font-size: 16px;
       color: #666;
@@ -132,25 +135,26 @@
         }
       }
 
-      .loginBtn {
-        background: #4081b8;
-        color: #fff;
-        padding: 14px ;
-        font-size: 16px;
+      button {
+        margin-top: 10px;
+        background-color: #fff;
+        border: 1px solid black;
+        color: black;
         border-radius: 8px;
-        border: none;
+        font-size: 16px;
+        font-weight: 600;
         cursor: pointer;
-        transition: background 0.3s;
-        width: 100%;
-
-        @include responsiveness.small{
-            font-size: 14px;
-            padding: 10px;
-        }
+        transition: 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
 
         &:hover {
-          background: #30618a;
+          background: black;
+          color: white;       
         }
+
       }
 
       .extraLinks {

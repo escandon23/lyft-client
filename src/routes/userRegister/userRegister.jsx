@@ -6,18 +6,19 @@ import './userRegister.scss';
 
 
 const UserRegister = () => {
-  const [form, setForm] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-    rand: '',
-    country: '',
-  });
-
+  
   const [registrationMessage, setRegistrationMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({});
+
+  const thisYear = new Date().getFullYear()
+
+  const [form, setForm] = useState({
+    email: '',
+    password: '',
+    confirmPassword: ''
+  });
+
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -27,8 +28,6 @@ const UserRegister = () => {
   const validateForm = () => {
     let newErrors = {};
 
-    if (!form.firstName.trim()) newErrors.firstName = "First name is required";
-    if (!form.lastName.trim()) newErrors.lastName = "Last name is required";
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!form.email.trim()) {
@@ -44,12 +43,11 @@ const UserRegister = () => {
       newErrors.password = "Password must be at least 6 characters";
     }
 
-    if (!form.rand) {
-      newErrors.rand = "Please confirm your password";
-    } else if (form.password !== form.rand) {
-      newErrors.rand = "Passwords do not match";
+    if (!form.confirmPassword) {
+      newErrors.confirmPassword = "Please confirm your password";
+    } else if (form.password !== form.confirmPassword) {
+      newErrors.confirmPassword = "Passwords do not match";
     }
-
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -60,16 +58,14 @@ const UserRegister = () => {
     if (!validateForm()) return;
 
     try {
-      await axios.post('https://blueledgerfx-api.onrender.com/api/userRegister/send', form);
+      await axios.post('http://localhost:5000/userRegister/send', form);
 
       setRegistrationMessage("✅ Registration successful");
       
        setForm({
-      firstName: '',
-      lastName: '',
       email: '',
       password: '',
-      rand: ''
+      confirmPassword: ''
     });
    
     } catch (error) {
@@ -80,25 +76,16 @@ const UserRegister = () => {
   return (
     <div className='userRegister'>
       <div className="register-card">
-        <h2 className='logo'><Link to="/">LOGO FX</Link></h2> 
-        <h1>Create an Account</h1>
-        <p className="subtitle">Join Blueledger FX and start your investment journey today</p>
+        <div className='exit'>
+          <Link to="/"><img src="icons/exit.png" alt="" /></Link>
+        </div>
+        <div>
+          <h1>Sign Up</h1>
+          <p className="subtitle">Join Lyft  FX and start your investment journey today</p>
+        </div>
 
         <form onSubmit={handleSubmit} noValidate>
-          <div className='names'>
-            <div className='name'>
-              <label>First Name</label>
-              <input type='text' name='firstName' value={form.firstName} onChange={handleChange} />
-              {errors.firstName && <p className="error">{errors.firstName}</p>}
-            </div>
-            <div className='name'>
-              <label>Last Name</label>
-              <input type='text' name='lastName' value={form.lastName} onChange={handleChange} />
-              {errors.lastName && <p className="error">{errors.lastName}</p>}
-            </div>
-          </div>
-
-          <label>Email</label>
+           <label>Email</label>
           <input type='email' name='email' value={form.email} onChange={handleChange} />
           {errors.email && <p className="error">{errors.email}</p>}
 
@@ -118,23 +105,30 @@ const UserRegister = () => {
             <div className='name password-field'>
               <label>Confirm Password</label>
               <div className="password-input">
-                <input type={showPassword ? "text" : "password"} name='rand' value={form.rand} onChange={handleChange} />
+                <input type={showPassword ? "text" : "password"} name='confirmPassword' value={form.confirmPassword} onChange={handleChange} />
                 <span onClick={() => setShowPassword(!showPassword)} className="toggle-icon">
                   {showPassword ? <EyeOff size={18}/> : <Eye size={18}/>}
                 </span>
               </div>
-              {errors.rand && <p className="error">{errors.rand}</p>}
+              {errors.confirmPassword && <p className="error">{errors.confirmPassword}</p>}
             </div>
           </div>
 
           <button type='submit'>Register</button>
+          <div class="divider">
+            <span>or</span>
+          </div>
+
+          <button><img src="icons/google.png" alt="" />Sign Up with Google</button>
+          <button><img src="icons/apple.png" alt="" />Sign Up with Apple</button>
+
            <p className={`${registrationMessage.includes("✅") ? "success" : "fail"}`}>{registrationMessage}</p>
         </form>
 
         <p className="login-text">
           Already have an account? <Link to='/userLogin'>Login</Link>
         </p>
-        <p className="footer">© 2025 Blueledger FX. All Rights Reserved.</p>
+        <p className="footer">© {thisYear} Lyft Fx . All Rights Reserved.</p>
       </div>
     </div>
   );

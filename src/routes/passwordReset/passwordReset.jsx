@@ -6,7 +6,7 @@ const PasswordReset = () => {
   return (
     <div className="passwordReset">
       <div className="reset-card">
-        <h1 className="title">Password Reset</h1>
+        <h1 className="title">Reset Password</h1>
         <p className="subtitle">
           Enter the email address you used during registration and we’ll send you
           a reset link.

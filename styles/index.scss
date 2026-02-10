@@ -5,13 +5,15 @@
 
 html{
   scroll-behavior: smooth;
+  overflow-x: hidden;
+
+
 }
 
 body{
   color: white;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  overflow-x: none;
   font-family: 'Futura PT', 'Open Sans', sans-serif;
 }
 

@@ -17,7 +17,7 @@ const AdminLogin = () =>  {
 
     try {
      
-       const res = await axios.post('https://blueledgerfx-api.onrender.com/api/adminLogin/adminLogin', form);
+       const res = await axios.post('http://localhost:5000/api/adminLogin/adminLogin', form);
 
 
       localStorage.setItem('admin-token', res.data.token);
@@ -37,12 +37,15 @@ const AdminLogin = () =>  {
   return (
     <div className="adminLogin">
       <div className="login-card">
-        <div className="logo">
-          <Link to="/"><img src="logo.png" alt="Trader Base FX" /></Link>
-        </div>
+        <div className='exit'>
+                <Link to="/"><img src="icons/exit.png" alt="" /></Link>
+              </div>
+              <div>
+                        <h1 className="title">Admin Login</h1>
 
-        <h1 className="title">Welcome Back</h1>
-        <p className="subtitle">Log in to access your dashboard</p>
+        <p className="subtitle">Log in to access the admin dashboard</p>
+              </div>
+
 
         <form onSubmit={handleSubmit} noValidate>
           <div className="inputGroup">
@@ -72,7 +75,7 @@ const AdminLogin = () =>  {
             </div>
           </div>
 
-          <button type="submit" className="loginBtn">
+          <button type="submit">
             Login
           </button>
           {error && <p className="error">{error}</p>}
