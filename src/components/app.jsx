@@ -7,7 +7,6 @@ import PasswordReset from '../routes/passwordReset/passwordReset'
 import AdminLogin from '../routes/adminLogin/adminLogin'
 import AdminDashboard from '../routes/adminDashboard/adminDashboard'
 import UserDashboard from '../routes/userDashboard/userDashboard'
-import Account from '../routes/userDashboard/account/account'
 import Dashboard from '../routes/userDashboard/dashboard/dashboard'
 import Support from "../routes/userDashboard/support/support"
 import TransactionHistory from "../routes/userDashboard/transactionHistory/transactionHistory"
@@ -16,7 +15,6 @@ import SubscriptionTrade from "../routes/userDashboard/subscriptionTrade/subscri
 import Packages from "../routes/userDashboard/packages/packages"
 import Referral from "../routes/userDashboard/referral/referral"
 import AdminSubscription from '../routes/adminDashboard/adminSubscription/adminSubscription'
-import AdminRegistration from '../routes/adminDashboard/adminRegistration/adminRegistration'
 import AdminTransaction from '../routes/adminDashboard/adminTransaction/adminTransaction'
 const App = () => {
 
@@ -46,11 +44,6 @@ const App = () => {
         path : "/adminDashboard",
         element : <AdminDashboard/>,
         children : [
-          {
-            path : "registration",
-            element : <AdminRegistration/>
-
-            },
             {
               path : "subscription",
               element : <AdminSubscription/>
@@ -73,10 +66,6 @@ const App = () => {
            {
             path : "dashboard",
             element : <Dashboard/>
-          },
-            {
-            path : "account",
-            element : <Account/>
           },
           {
             path : "support",

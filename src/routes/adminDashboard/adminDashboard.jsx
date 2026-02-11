@@ -1,10 +1,8 @@
-import React from "react"
-import { Link } from "react-router";
 import { useEffect , useState } from "react";
-import { Outlet } from "react-router";
+import { Outlet , Link} from "react-router-dom";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faUser,faCreditCard,faUserFriends,faSignOut} from "@fortawesome/free-solid-svg-icons";
+import {faUser,faCreditCard,faSignOut} from "@fortawesome/free-solid-svg-icons";
 import "./adminDashboard.scss";
 
 
@@ -24,27 +22,16 @@ const AdminDashboard = () => {
         return;
       }
   
-      axios
-        .get('https://blueledgerfx-api.onrender.com/api/adminDashboard/adminDashboard', {
-          headers: {
-            'x-auth-token': token,
-          },
-        })
-        .then((res) => {
-          setLoading(false)
-        
-        }
-        )
-        .catch((err) => {
-          console.log(err)
-        });
+      axios.get('http://localhost:5000/api/adminDashboard/adminDashboard', {headers: {'x-auth-token': token}, })
+      .then((res) => { setLoading(false)} )
+      .catch((err) => {console.log(err) });
     }, []);
 
       
     const handleLogout = (nav) => {
       setActiveNav(nav)
-    localStorage.removeItem('admin-token');
-    window.location.href = '/adminLogin';
+      localStorage.removeItem('admin-token');
+      window.location.href = '/adminLogin';
   };
 
 
@@ -65,11 +52,12 @@ const AdminDashboard = () => {
         <div className='adminDashboard'>
           <div  className={`navigationMenu ${isNavExpanded ? "expanded" : "collapsed"}`}>
             <div className="menuToggle" onClick={toggleNav}>
-              <img src={` ${isNavExpanded ? "/cancel.png" : "/menu.png"}`} alt="menu" />
+              <img src={` ${isNavExpanded ? "/icons/cancel.png" : "/icons/menu.png"}`} alt="menu" />
            </div>
               <ul>
-                <Link to="/"><img className="navHeader" src="/logo.png"/></Link>
-                <Link to="registration"><li onClick={() => handleNav("registration")} className= {activeNav === "registration" ? "activeNav" : ""}> <FontAwesomeIcon className="icon" icon={faUserFriends} /><span className="label">Manage Registration</span></li></Link>
+                <div className="navHeader">
+                  <Link className="logo" to="/">LYFT FX</Link>
+                  </div>
                 <Link to="subscription"><li onClick={() => handleNav("subscription")} className= {activeNav === "subscription" ? "activeNav" : ""}><FontAwesomeIcon className="icon" icon={faUser} /><span className="label">Manage Subscription</span></li></Link>
                 <Link to="transaction"><li onClick={() => handleNav("transaction")} className= {activeNav === "transaction" ? "activeNav" : ""}><FontAwesomeIcon className="icon" icon={faCreditCard} /><span className="label">Manage Transaction</span></li></Link>
                 <li onClick={() => handleLogout("logout")} className= {activeNav === "logout" ? "activeNav" : ""}><FontAwesomeIcon className="icon" icon={faSignOut} /> <span className="label">Logout</span></li>

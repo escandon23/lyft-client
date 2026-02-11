@@ -4,7 +4,7 @@ import "./Service.scss"
 const ServicesData = [
     {
         heading : "Forex Trading",
-        image : "public/services/forex-trading.png",
+        image : "/services/forex-trading.png",
         details : "Lyft FX Company Platform provides access to the global foreign exchange market, allowing clients to trade major, minor, and exotic currency pairs with competitive spreads and fast execution."
     },
     {

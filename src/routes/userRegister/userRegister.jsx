@@ -65,7 +65,6 @@ const UserRegister = () => {
        setForm({
       email: '',
       password: '',
-      confirmPassword: ''
     });
    
     } catch (error) {

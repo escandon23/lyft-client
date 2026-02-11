@@ -23,9 +23,9 @@
       font-size: 14px;
 
       &.collapsed {
-        width: 70px;
+        width: 40px;
 
-            ul li {
+      ul li {
         justify-content: center;
 
       }
@@ -44,7 +44,7 @@
             width: 150px;  
             padding:15px;
 
-             @include responsiveness.small{
+          @include responsiveness.small{
             height: 50px;
             width: 150px;
       }
@@ -73,9 +73,16 @@
             ul li {
         justify-content: center;
 
+
+    
+
       }
 
         .label{
+          display: none;
+        }
+
+        .logo{
           display: none;
         }
       }
@@ -169,13 +176,17 @@
           padding: 35px;
         }
 
-     
+        
 
     
 
         .icon{
-          height: 20px;
-          width: 20px;
+          height: 15px;
+          width: 15px;
+
+             &:hover{
+              color : white;
+            }
 
           @include responsiveness.medium{
             height: 30px;
@@ -189,18 +200,26 @@
 
           @include responsiveness.small{
             font-size: 14px;
+
+            &:hover{
+              color: white;
+            }
           }
 
       
         }
 
         &.activeNav {
-          background: #fff;
-          color: black;
+          
+          .label{
+            color: white;
+          }
 
           .icon {
-            color: black;
+            color: white;
           }
+
+
         }
       }
     }
@@ -210,12 +229,11 @@
   .main {
     flex: 4;
     height: 100vh;
-    background-color: #f9fafb;
     color: #000;
     overflow-y: auto;
 
     @include responsiveness.small{
-       margin-left: 70px;
+       margin-left: 40px;
        flex: 10;
     } 
        @include responsiveness.medium{

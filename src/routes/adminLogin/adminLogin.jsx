@@ -1,52 +1,44 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { Link, useNavigate } from "react-router-dom"; 
+import { Link } from "react-router-dom"; 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";import './adminLogin.scss';
 
 const AdminLogin = () =>  {
   const [form, setForm] = useState({ username: '', password: '' });
   const [passwordVisible , setPasswordVisible] = useState(false)
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+
+ 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
     setError('');
 
     try {
-     
-       const res = await axios.post('http://localhost:5000/api/adminLogin/adminLogin', form);
-
-
+      const res = await axios.post('http://localhost:5000/api/adminLogin/adminLogin', form)
       localStorage.setItem('admin-token', res.data.token);
-      window.location.href = '/adminDashboard';
+      window.location.href = '/adminDashboard/subscription';
     } catch (err) {
       setError('Invalid credentials. Please try again.');
-    } finally {
-      setLoading(false);
-    }
+    } 
   };
 
-    const togglePasswordVisibility = () => {
+   const togglePasswordVisibility = () => {
     setPasswordVisible((prev) => !prev);
-  };
+  }
 
 
   return (
     <div className="adminLogin">
       <div className="login-card">
         <div className='exit'>
-                <Link to="/"><img src="icons/exit.png" alt="" /></Link>
-              </div>
-              <div>
-                        <h1 className="title">Admin Login</h1>
-
-        <p className="subtitle">Log in to access the admin dashboard</p>
-              </div>
-
-
+            <Link to="/"><img src="icons/exit.png" alt="" /></Link>
+        </div>
+        <div>
+          <h1 className="title">Admin Login</h1>
+          <p className="subtitle">Log in to access the admin dashboard</p>
+        </div>
         <form onSubmit={handleSubmit} noValidate>
           <div className="inputGroup">
             <label>Username</label>
@@ -55,7 +47,7 @@ const AdminLogin = () =>  {
               name="username"
               placeholder='admin username'
               value={form.email}
-                onChange = {e => (setForm({...form , username : e.target.value }))}
+              onChange = {e => (setForm({...form , username : e.target.value }))}
             />
           </div>
 
@@ -75,9 +67,7 @@ const AdminLogin = () =>  {
             </div>
           </div>
 
-          <button type="submit">
-            Login
-          </button>
+          <button type="submit">Login </button>
           {error && <p className="error">{error}</p>}
           </form>
       </div>

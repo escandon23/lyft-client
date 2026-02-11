@@ -1,11 +1,9 @@
 import { useState, React, useEffect } from "react";
 import axios from "axios";
-import "./userDashboard.scss";
-import { Link, Outlet } from "react-router";
+import { Link, Outlet } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHome,
-  faUser,
   faHeadset,
   faHistory,
   faCreditCard,
@@ -14,6 +12,8 @@ import {
   faUserFriends,
   faSignOut,
 } from "@fortawesome/free-solid-svg-icons";
+import "./userDashboard.scss";
+
 
 const UserDashboard = () => {
   const [message, setMessage] = useState("");
@@ -30,7 +30,7 @@ const UserDashboard = () => {
     }
 
     axios
-      .get("https://blueledgerfx-api.onrender.com/api/userDashboard/send/", {
+      .get("http://localhost:3000/api/userDashboard/send/", {
         headers: { "user-token": token },
       })
       .then((res) => {
@@ -84,15 +84,7 @@ const UserDashboard = () => {
               <span className="label">Dashboard</span>
             </li>
           </Link>
-          <Link to="account">
-            <li
-              onClick={() => handleNav("account")}
-              className={activeNav === "account" ? "activeNav" : ""}
-            >
-              <FontAwesomeIcon className="icon" icon={faUser} />
-              <span className="label">Account</span>
-            </li>
-          </Link>
+          
           <Link to="support">
             <li
               onClick={() => handleNav("support")}
