@@ -58,13 +58,14 @@ const UserRegister = () => {
     if (!validateForm()) return;
 
     try {
-      await axios.post('http://localhost:5000/userRegister/send', form);
+      await axios.post('http://localhost:5000/api/userRegister/send', form);
 
       setRegistrationMessage("✅ Registration successful");
       
        setForm({
       email: '',
       password: '',
+      confirmPassword : ""
     });
    
     } catch (error) {
@@ -94,9 +95,7 @@ const UserRegister = () => {
               <label>Password</label>
               <div className="password-input">
                 <input type={showPassword ? "text" : "password"} value={form.password} name='password' onChange={handleChange} />
-                <span onClick={() => setShowPassword(!showPassword)} className="toggle-icon">
-                  {showPassword ? <EyeOff size={18}/> : <Eye size={18}/>}
-                </span>
+                <span onClick={() => setShowPassword(!showPassword)} className="toggle-icon">{showPassword ? <EyeOff size={18}/> : <Eye size={18}/>} </span>
               </div>
               {errors.password && <p className="error">{errors.password}</p>}
             </div>
@@ -105,18 +104,14 @@ const UserRegister = () => {
               <label>Confirm Password</label>
               <div className="password-input">
                 <input type={showPassword ? "text" : "password"} name='confirmPassword' value={form.confirmPassword} onChange={handleChange} />
-                <span onClick={() => setShowPassword(!showPassword)} className="toggle-icon">
-                  {showPassword ? <EyeOff size={18}/> : <Eye size={18}/>}
-                </span>
+                <span onClick={() => setShowPassword(!showPassword)} className="toggle-icon">{showPassword ? <EyeOff size={18}/> : <Eye size={18}/>}</span>
               </div>
               {errors.confirmPassword && <p className="error">{errors.confirmPassword}</p>}
             </div>
           </div>
 
           <button type='submit'>Register</button>
-          <div class="divider">
-            <span>or</span>
-          </div>
+          <div className="divider"><span>or</span> </div>
 
           <button><img src="icons/google.png" alt="" />Sign Up with Google</button>
           <button><img src="icons/apple.png" alt="" />Sign Up with Apple</button>

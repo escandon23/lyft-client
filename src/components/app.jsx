@@ -1,4 +1,3 @@
-import React from 'react'
 import { createBrowserRouter , RouterProvider } from 'react-router'
 import Homepage from './homepage/homepage'
 import UserRegister from '../routes/userRegister/userRegister'
@@ -8,7 +7,6 @@ import AdminLogin from '../routes/adminLogin/adminLogin'
 import AdminDashboard from '../routes/adminDashboard/adminDashboard'
 import UserDashboard from '../routes/userDashboard/userDashboard'
 import Dashboard from '../routes/userDashboard/dashboard/dashboard'
-import Support from "../routes/userDashboard/support/support"
 import TransactionHistory from "../routes/userDashboard/transactionHistory/transactionHistory"
 import DepositWithdrawal from "../routes/userDashboard/depositWithdrawal/depositWithdrawal"
 import SubscriptionTrade from "../routes/userDashboard/subscriptionTrade/subscriptionTrade"
@@ -67,10 +65,6 @@ const App = () => {
             path : "dashboard",
             element : <Dashboard/>
           },
-          {
-            path : "support",
-            element : <Support/>
-          }, 
           {
             path : "transactionHistory",
             element : <TransactionHistory/>

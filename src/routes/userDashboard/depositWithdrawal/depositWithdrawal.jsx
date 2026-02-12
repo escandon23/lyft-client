@@ -16,11 +16,6 @@ const DepositWithdrawal = () => {
     {name : "Bitcoin" , img: "/bitcoin.png"},
       {name : "Bank Transfer" , img: "/bank.png"},
       {name : "Credit Card" , img: "/visa.png"},
-      {name : "Yandex" , img: "/yandex.png"},
-      {name : "Neteller" , img: "/neteller.png"},
-      {name : "Webmoney" , img: "/webmoney.svg"},
-      {name :"QiWi Wallet", img:"/qiwi.png"},
-      {name :"Skrill", img:"/skrill.png"}
 
   ]
 
@@ -74,7 +69,7 @@ const DepositWithdrawal = () => {
     <div className="depositWithdrawal">
       <div className="card">
         <form onSubmit={handleDeposit}>
-          <h1>💰 Make a Deposit</h1>
+          <h1>Make a Deposit</h1>
           <div className="input-group">
             <span>$</span>
             <input
@@ -113,7 +108,7 @@ const DepositWithdrawal = () => {
 
       <div className="card">
         <form onSubmit={handleWithdrawal}>
-          <h1>🏦 Make a Withdrawal</h1>
+          <h1> Make a Withdrawal</h1>
           <div className="input-group">
             <span>$</span>
             <input

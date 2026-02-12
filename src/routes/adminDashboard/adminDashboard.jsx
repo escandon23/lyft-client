@@ -48,27 +48,25 @@ const AdminDashboard = () => {
 
       if(loading) return null;
 
-    return (
-        <div className='adminDashboard'>
-          <div  className={`navigationMenu ${isNavExpanded ? "expanded" : "collapsed"}`}>
-            <div className="menuToggle" onClick={toggleNav}>
-              <img src={` ${isNavExpanded ? "/icons/cancel.png" : "/icons/menu.png"}`} alt="menu" />
-           </div>
-              <ul>
-                <div className="navHeader">
-                  <Link className="logo" to="/">LYFT FX</Link>
-                  </div>
-                <Link to="subscription"><li onClick={() => handleNav("subscription")} className= {activeNav === "subscription" ? "activeNav" : ""}><FontAwesomeIcon className="icon" icon={faUser} /><span className="label">Manage Subscription</span></li></Link>
-                <Link to="transaction"><li onClick={() => handleNav("transaction")} className= {activeNav === "transaction" ? "activeNav" : ""}><FontAwesomeIcon className="icon" icon={faCreditCard} /><span className="label">Manage Transaction</span></li></Link>
-                <li onClick={() => handleLogout("logout")} className= {activeNav === "logout" ? "activeNav" : ""}><FontAwesomeIcon className="icon" icon={faSignOut} /> <span className="label">Logout</span></li>
-              </ul>
-          </div>
-          <div className="main">
-            <Outlet/>
-          </div>
-        </div>
-  
-  );
+return (
+  <div className='adminDashboard'>
+    <div  className={`navigationMenu ${isNavExpanded ? "expanded" : "collapsed"}`}>
+      <div className="menuToggle" onClick={toggleNav}>
+        <img src={` ${isNavExpanded ? "/icons/cancel.png" : "/icons/menu.png"}`} alt="menu" />
+      </div>
+      <ul>
+        <Link className="navHeader" to="/">LYFT FX</Link>
+        <Link to="subscription"><li onClick={() => handleNav("subscription")} className= {activeNav === "subscription" ? "activeNav" : ""}><FontAwesomeIcon className="icon" icon={faUser} /><span className="label">Manage Subscription</span></li></Link>
+        <Link to="transaction"><li onClick={() => handleNav("transaction")} className= {activeNav === "transaction" ? "activeNav" : ""}><FontAwesomeIcon className="icon" icon={faCreditCard} /><span className="label">Manage Transaction</span></li></Link>
+        <li onClick={() => handleLogout("logout")} className= {activeNav === "logout" ? "activeNav" : ""}><FontAwesomeIcon className="icon" icon={faSignOut} /> <span className="label">Logout</span></li>
+      </ul>
+    </div>
+    <div className="main">
+      <Outlet/>
+    </div>
+  </div>
+
+);
   
 }
 

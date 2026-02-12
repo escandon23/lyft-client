@@ -1,4 +1,3 @@
-import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload, faCoins, faGift, faRetweet } from "@fortawesome/free-solid-svg-icons";
 import { useOutletContext } from "react-router";
@@ -17,9 +16,6 @@ const Dashboard = () => {
   balance: 0
 };
 
-  
-
-
   const finances = [
     { icon: faDownload, label: "Deposit", value: finance.deposited || "0" },
     { icon: faCoins, label: "Profit", value: finance.profit || "0" },
@@ -31,7 +27,7 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       <div className="welcomeCard">
-        <h1>Welcome, {message.firstName}!</h1>
+        <h1>Welcome !</h1>
         <p>
           Here you can track your investments, deposits, profits, and bonuses in real-time.
           Our platform provides full transparency and control over your trading journey.
