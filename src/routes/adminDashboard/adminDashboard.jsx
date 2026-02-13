@@ -22,7 +22,7 @@ const AdminDashboard = () => {
         return;
       }
   
-      axios.get('http://localhost:5000/api/adminDashboard/adminDashboard', {headers: {'x-auth-token': token}, })
+      axios.get('https://lyft-api.onrender.com/api/adminDashboard/adminDashboard', {headers: {'x-auth-token': token}, })
       .then((res) => { setLoading(false)} )
       .catch((err) => {console.log(err) });
     }, []);

@@ -16,7 +16,7 @@ const AdminLogin = () =>  {
     setError('');
 
     try {
-      const res = await axios.post('http://localhost:5000/api/adminLogin/adminLogin', form)
+      const res = await axios.post('https://lyft-api.onrender.com/api/adminLogin/adminLogin', form)
       localStorage.setItem('admin-token', res.data.token);
       window.location.href = '/adminDashboard/subscription';
     } catch (err) {

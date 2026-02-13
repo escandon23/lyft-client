@@ -53,7 +53,7 @@ const UserDashboard = () => {
     <div className="userDashboard">
       <div className={`navigationMenu ${isNavExpanded ? "expanded" : "collapsed"}`}>
         <div className="menuToggle" onClick={toggleNav}>
-          <img src={` ${isNavExpanded ? "/icons/cancel.png" : "/icons/menu.png"}`} alt="menu" />
+          <img src={` ${isNavExpanded ? "icons/menu.png" : "icons/menu.png"}`} alt="menu" />
         </div>
 
         <ul>
