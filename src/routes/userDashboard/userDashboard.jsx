@@ -24,7 +24,7 @@ const UserDashboard = () => {
       return;
     }
 
-    axios.get("http://localhost:5000/api/userDashboard/send/", {headers: { "user-token": token }})
+    axios.get("https://lyft-api.onrender.com/api/userDashboard/send/", {headers: { "user-token": token }})
       .then((res) => {setMessage(res.data.userInfo); setLoading(false);})
       .catch((err) => {console.log(err)});
     }, []);

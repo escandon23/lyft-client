@@ -26,7 +26,7 @@ const UserLogin = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:5000/api/userLogin/send",formData);
+      const res = await axios.post("https://lyft-api.onrender.com/api/userLogin/send",formData);
       console.log("Login response:", res.data);
 
       localStorage.setItem("user-token", res.data.token);
