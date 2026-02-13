@@ -75,17 +75,17 @@ const UserLogin = () => {
               </span>
             </div>
           </div>
-
+          {error && <p className="error">{error}</p>}
           <button type="submit">
             Login
           </button>
+
            <div class="divider">
             <span>or</span>
           </div>
 
           <button><img src="icons/google.png" alt="" />Login with Google</button>
           <button><img src="icons/apple.png" alt="" />Login with Apple</button>
-          {error && <p className="error">{error}</p>}
 
           <div className="extraLinks">
             <p>Forgot your password?<Link to="/passwordReset" className="link">  Reset</Link></p>
