@@ -58,7 +58,7 @@ const UserRegister = () => {
     if (!validateForm()) return;
 
     try {
-      await axios.post('http://localhost:5000/api/userRegister/send', form);
+      await axios.post('https://lyft-api.onrender.com/api/userRegister/send', form);
 
       setRegistrationMessage("✅ Registration successful");
       

@@ -61,7 +61,7 @@ const AdminSubscription = () => {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/subscribe/create",
+        "https://lyft-api.onrender.com/api/subscribe/create",
         form
       );
 
